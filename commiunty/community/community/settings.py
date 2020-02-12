@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'community.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'community_db',
+        'USER': "root",
+        'PASSWORD':'1234567890',
+        'HOST': '127.0.0.1',
+        'PORT':'3306'
     }
 }
 
@@ -122,3 +127,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+AUTH_USRE_MODEL = 'authentication.User'
