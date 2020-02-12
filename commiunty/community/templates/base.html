@@ -31,11 +31,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">{% trans 'Q&A' %}</a></li>
+                        <li><a href="{% url 'questions:question_list' %}">{% trans 'Q&A' %}</a></li>
                     </ul>
 
                     {% if not hide_search %}
-                        <form class="navbar-form navbar-left" role="search" action="#">
+                        <form class="navbar-form navbar-left" role="search" action="{% url 'search:search' %}">
                             <div class="input-group" style="width:210px">
                                 <input type="text" class="form-control" name="q" placeholder="{% trans 'Search' %}">
                     <span class="input-group-btn">
@@ -52,14 +52,14 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">{% trans 'profile' %}</a></li>
+                                    <li><a href="{%url 'user_profile:profile' user.id%}">{% trans 'profile' %}</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">{% trans 'Log out' %}</a></li>
                                 </ul>
                             </li>
                         {% else %}
-                            <li><a href="#">{% trans 'Sign up' %}</a></li>
-                            <li><a href="#">{% trans 'Log in' %}</a></li>
+                            <li><a href="{%url 'authentication:signup'%}">{% trans 'Sign up' %}</a></li>
+                            <li><a href="{%url 'authentication:login'%}">{% trans 'Log in' %}</a></li>
                         {% endif %}
                     </ul>
                 </div>

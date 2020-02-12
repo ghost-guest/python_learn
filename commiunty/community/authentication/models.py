@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
 from .manager import UserManager
 
-
 class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(unique=True)
@@ -21,4 +20,3 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_userid(self):
         return User.objects.get(username=self.username).user_id
-
