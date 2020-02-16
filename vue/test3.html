@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <script src='https://cdn.bootcss.com/vue/2.6.6/vue.min.js'></script>
+</head>
+<div class="app">
+    <!-- 运算符 -->
+    <p>num+ 24 = {{num + 24}}</p>
+    <!-- 三元表达式 -->
+    <p>Are you ok?{{ok ? 'I am ok!':'no'}}</p>
+    <!-- 对象方法直接调用 -->
+    <p>名字倒过来写：{{name.split('').reverse().join('')}}</p>
+    <!-- 属性值运算操作 -->
+    <p v-bind:class="'col'+colNum">syl</p>
+</div>
+<body>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data:{
+            num: 20,
+            ok: true,
+            name: '实验楼',
+            colNum:12,
+
+        }
+    })
+
+</script>
+</body>
+
+</html>

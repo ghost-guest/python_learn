@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <script src='https://cdn.bootcss.com/vue/2.6.6/vue.min.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <a v-bind:href="url">百度</a>
+    </div>
+    <div class="ap">
+        <p>我叫： {{name}}</p>
+        <button v-on:[event]='handleclick'>翻转名字</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                url:'http:www.baidu.com'
+            }
+        })
+        var ap = new Vue({
+            el: '.ap',
+            data:{
+                name:'实验楼',
+                event: 'click',
+            },
+            methods:{
+                handleclick: function(){
+                    this.name = this.name.split('').reverse().join("")
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

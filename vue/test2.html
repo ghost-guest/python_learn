@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.min.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <input type="checkbox" v-bind:checked='isChecked'>
+
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isChecked: false,
+            }
+        })
+    </script>
+</body>
+</html>

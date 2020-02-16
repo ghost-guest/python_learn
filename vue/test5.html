@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <script src='https://cdn.bootcss.com/vue/2.6.6/vue.min.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <form action="/" @submit.prevent='submit'>
+            <button type='submit'>提交</button>        
+        </form>
+
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data:{
+                
+            },
+            methods:{
+                submit: function(){
+                    console.log("提交成功！")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
