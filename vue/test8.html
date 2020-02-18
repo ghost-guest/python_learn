@@ -14,20 +14,23 @@
 
 <body>
     <div id="app">
-        <form action="/" @submit.prevent='submit'>
-            <button type='submit'>提交</button>
-        </form>
-
+        <p>{{msg}}</p>
+        <button @click="handleclick('hello syl')">改变msg</button>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-
+                msg: "你好"
             },
             methods: {
-                submit: function () {
-                    console.log("提交成功！")
+                handleclick: function (val) {
+                    this.msg = val
+                }
+            },
+            watch: {
+                msg: function (newval, oldval) {
+                    alert('新值' + newval + '--------' + '旧值' + oldval)
                 }
             }
         })

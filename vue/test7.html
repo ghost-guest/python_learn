@@ -1,0 +1,59 @@
+<!--
+ * @Author: ghost-guest
+ * @Date: 2020-02-18 20:04:08
+ * @LastEditTime: 2020-02-18 20:04:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /pyenv/vue/test7.html
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <script src='https://cdn.bootcss.com/vue/2.6.6/vue.min.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>firstname: {{firstname}}</p>
+        <p>lastname: {{lastname}}</p>
+        <p>全名： {{fullname}}</p>
+        <button @click='changename'>改名</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                firstname: '王',
+                lastname: '花花',
+            },
+            methods: {
+                changename: function () {
+                    this.fullname = '李大锤'
+                }
+            },
+            computed: {
+                fullname: {
+                    get: function () {
+                        return this.firstname + this.lastname
+                    },
+                    set: function (newname) {
+                        var name = newname
+                        this.firstname = name.slice(0, 1)
+                        this.lastname = name.slice(1)
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
