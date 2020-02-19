@@ -1,0 +1,57 @@
+<!--
+ * @Author: ghost-guest
+ * @Date: 2020-02-19 19:10:47
+ * @LastEditTime: 2020-02-19 19:23:45
+ * @LastEditors: Please set LastEditors
+ * @Description: 使用 filters 过滤器实现大写转换和自动去除字符串中的数字
+ * @FilePath: /pyenv/vue/test9.html
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <script src='https://cdn.bootcss.com/vue/2.6.6/vue.min.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>小写转大写： 过滤前：{{msg}} 过滤后： {{msg|toupcase}}</p>
+        <p>去除数字： 过滤前： {{msg2}} 过滤后： {{msg2|getstring}}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello',
+                msg2: "he1eessc3"
+
+            },
+            filters: {
+                toupcase: function (val) {
+                    return val.toUpperCase()
+                },
+                getstring: function (val) {
+                    let newval = ''
+                    val.split('').map(function (item) {
+                        if (9 >= item && item >= 0) {
+                            return
+                        } else {
+                            return newval += item
+                        }
+                    })
+                    return newval
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
