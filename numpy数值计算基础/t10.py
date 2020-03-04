@@ -4,7 +4,7 @@
 @Author: ghost-guest
 @Date: 2020-03-03 18:59:15
 @LastEditors: ghost-guest
-@LastEditTime: 2020-03-03 19:20:17
+@LastEditTime: 2020-03-04 18:58:33
 @FilePath: /pyenv/numpy数值计算基础/t10.py
 @Description: 
 '''
@@ -37,3 +37,14 @@ print(b)
 # print(','.join(a.split(',')[:-1]))
 c = np.diff(a)
 print(c)
+
+"""
+指数和对数
+如果你需要进行指数或者对数求解，可以用到以下这些方法。
+
+numpy.exp(x)：计算输入数组中所有元素的指数。
+numpy.log(x)：计算自然对数。
+numpy.log10(x)：计算常用对数。
+numpy.log2(x)：计算二进制对数。
+
+"""
