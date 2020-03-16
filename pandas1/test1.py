@@ -4,10 +4,10 @@
 @LastEditTime: 2020-02-22 14:09:53
 @LastEditors: Please set LastEditors
 @Description: In User Settings Edit 
-@FilePath: /pyenv/pandas/test1.py
+@FilePath: /pyenv/pandas1/test1.py
 '''
 import numpy as np
-import pandas as pd
+import pandas1 as pd
 import warnings
 warnings.filterwarnings('ignore')
 df = pd.read_csv(
