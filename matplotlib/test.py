@@ -23,3 +23,9 @@ plt.show()
 
 plt.bar([1, 2, 3], [1, 2, 3])
 plt.show()
+
+x = np.random.ranf(1000)
+# print(x)
+y = np.random.ranf(1000)
+plt.scatter(x, y)
+plt.show()
