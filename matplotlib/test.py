@@ -29,3 +29,7 @@ x = np.random.ranf(1000)
 y = np.random.ranf(1000)
 plt.scatter(x, y)
 plt.show()
+
+plt.pie([1, 2, 3, 3])
+plt.show()
+
